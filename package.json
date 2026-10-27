@@ -1,0 +1,13 @@
+{
+  "name": "threadmap",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node src/server.js",
+    "import": "node src/cli.js",
+    "test": "node --test test/*.test.js"
+  }
+}
