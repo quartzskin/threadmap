@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>threadmap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>threadmap</h1>
+  <input id="search" type="search" placeholder="search name, indicator value, summary" autocomplete="off">
+  <div id="results" hidden></div>
+  <nav>
+    <button id="tab-graph" class="on">Graph</button>
+    <button id="tab-dupes">Duplicates</button>
+  </nav>
+</header>
+<main>
+  <aside id="filters">
+    <h2>Show</h2>
+    <div id="type-filters"></div>
+    <h2>Edges</h2>
+    <label>Min confidence
+      <select id="min-conf"><option value="1">low</option><option value="2">medium</option><option value="3">high</option></select>
+    </label>
+    <label><input type="checkbox" id="hide-weak"> hide weak edges</label>
+    <label><input type="checkbox" id="only-attr"> only attributed-to</label>
+    <h2>Legend</h2>
+    <ul id="legend"></ul>
+    <p class="note">Lines show reported relationships. Only a red attributed-to edge, with its cited evidence, says anything about who is behind something. Dashed lines are weak: low confidence or related-to.</p>
+  </aside>
+  <section id="stage">
+    <canvas id="canvas"></canvas>
+    <div id="hint">drag to move, wheel to zoom, click a node for evidence</div>
+  </section>
+  <aside id="detail"><p class="muted">Select a node.</p></aside>
+  <section id="dupes" hidden></section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
