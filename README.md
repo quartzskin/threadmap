@@ -24,8 +24,7 @@ A dataset is `{ "nodes": [...], "edges": [...] }`, see `data/sample.json`. Edges
 
 The sample is synthetic: the actors, malware, campaigns, reports, domains and hashes are made up (domains use `.example`, IPs come from documentation ranges). The ATT&CK technique ids and names are real. It deliberately includes a low-confidence attribution, a related-to edge, and three duplicate indicator pairs.
 
-## Known gaps
-
+## Limits
 - Duplicate detection only compares normalised values of the same indicator. No fuzzy matching, no related-domain logic.
 - "Weak" is a fixed rule (low confidence or `related-to`). There is no weighting beyond that, and a medium-confidence chain of many hops is not treated as weaker.
 - The link check finds one shortest path, strong edges first. It does not enumerate alternatives.
